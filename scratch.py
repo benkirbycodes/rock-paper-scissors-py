@@ -23,7 +23,10 @@ while gameLoop:
     choice = input("Rock, Paper or Scissors?\n")
 
     if not choice.lower() in choices:
-        print("That's not an option")
+        print("That's not an option\n")
+        playAgain = input("Play Again? (y / n)\n")
+        if playAgain.lower() == "n":
+            gameLoop = False
     elif choice.lower() in choices:
         choiceInt = choices[choice.lower()]
 
@@ -43,7 +46,7 @@ while gameLoop:
                 gameLoop = False
         else:
             print("Computer's Choice: " + computerChoiceText + "\n")
-            print("You win!\n")
+            print(name + " wins!\n")
             playAgain = input("Play Again? (y / n)\n")
             if playAgain.lower() == "n":
                 gameLoop = False
